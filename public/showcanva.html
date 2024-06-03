@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+    <div id="mydiv" >
+        <canvas id="canvas"  style="background: url(./background.jpg);background-repeat: no-repeat;background-size: cover;"width=900 height=600></canvas>
+        <!-- <canvas id="drawcanvas" style="background: url(images/no-image.png);background-repeat: no-repeat;background-size: cover;"width=1000 height=700></canvas> -->
+      </div>
+   </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+      <script>
+               
+               
+        //localStorage.setItem
+    
+    //var vin = "1001";
+    var temp_num;
+    //alert(vin);
+ var x_val = [631,758,920,946,814,674]; 
+ var y_val = [397,327,337,444,469,465];      
+ var x1_val = [231,458,920,946,814,674]; 
+ var y1_val = [297,427,337,444,469,465];
+    var selected = 0;
+ 
+var canvas=document.getElementById("canvas");
+var ctx=canvas.getContext("2d");
+var cw=canvas.width;
+var ch=canvas.height;
+function reOffset(){
+var BB=canvas.getBoundingClientRect();
+offsetX=BB.left;
+offsetY=BB.top;        
+}
+var offsetX,offsetY;
+reOffset();
+window.onscroll=function(e){ reOffset(); }
+window.onresize=function(e){ reOffset(); }
+
+ctx.fillStyle='blue';
+
+
+
+ctx.globalAlpha=0.025;
+for(var i=0;i<x_val.length;i++){
+//alert(x_val[i]);
+defineshape(x_val,y_val);
+ctx.fill();
+}
+        
+
+
+$("#canvas").mousemove(function(e){handleMouseMove(e);});
+$("#canvas").mousedown(function(e){handleclick(e);});
+
+        
+function onecanvas()
+        {
+         ctx.fillStyle='blue';
+
+
+
+ctx.globalAlpha=0.025;
+for(var i=0;i<x_val.length;i++){
+//alert(x_val[i]);
+defineshape(x_val,y_val);
+ctx.fill();
+}
+        }
+function defineshape(s1,s2){
+// alert(s1[0]);
+ctx.beginPath();
+ctx.moveTo(s1[0],s2[0]);
+for(var i=1;i<s1.length;i++){
+ ctx.lineTo(s1[i],s2[i]);
+}
+ctx.closePath();
+}
+
+function handleMouseMove(e){
+//alert("mouse")
+// tell the browser we're handling this event
+e.preventDefault();
+e.stopPropagation();
+// mouse position
+mouseX=parseInt(e.clientX-offsetX);
+mouseY=parseInt(e.clientY-offsetY);
+// test if mouse is inside any shape(s)
+// and redraw different alpha based on hovering
+ctx.clearRect(0,0,cw,ch);
+for(var i=0;i<x_val.length;i++){
+defineshape(x_val,y_val);
+if(ctx.isPointInPath(mouseX,mouseY)){
+   selected = 1;
+   ctx.globalAlpha=0.1;
+}else{
+   ctx.globalAlpha=0.025;
+   selected = 0;
+}
+ctx.fill();
+}
+
+for(var i=0;i<x1_val.length;i++){
+defineshape(x1_val,y1_val);
+if(ctx.isPointInPath(mouseX,mouseY)){
+   selected = 1;
+   ctx.globalAlpha=0.1;
+}else{
+   ctx.globalAlpha=0.025;
+   selected = 0;
+}
+ctx.fill();
+}
+}
+    function handleclick(e)
+    {
+        //alert("hg")
+        
+        e.preventDefault();
+e.stopPropagation();
+// mouse position
+mouseX=parseInt(e.clientX-offsetX);
+mouseY=parseInt(e.clientY-offsetY);
+// test if mouse is inside any shape(s)
+// and redraw different alpha based on hovering
+ctx.clearRect(0,0,cw,ch);
+        
+for(var i=0;i<x_val.length;i++){
+defineshape(x_val,y_val);
+if(ctx.isPointInPath(mouseX,mouseY)){
+//   alert("1")
+   selected = 1;
+   ctx.globalAlpha=0.1;
+}else{
+   ctx.globalAlpha=0.025;
+   selected = 0;
+}
+ctx.fill();
+}
+
+for(var i=0;i<x1_val.length;i++){
+defineshape(x1_val,y1_val);
+if(ctx.isPointInPath(mouseX,mouseY)){
+ //  alert("2");
+   selected = 1;
+   ctx.globalAlpha=0.1;
+}else{
+   ctx.globalAlpha=0.025;
+   selected = 0;
+}
+ctx.fill();
+}
+        if(selected == 1)
+            {
+            }
+    }
+</script>
+</html>

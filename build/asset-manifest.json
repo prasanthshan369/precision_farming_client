@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9dec73e1.css",
+    "main.js": "/static/js/main.7b917eed.js",
+    "static/media/background.jpg": "/static/media/background.a6d1042e73dc2ae1f0df.jpg",
+    "static/media/tomato1.png": "/static/media/tomato1.38cb33455bf3dec8e8f3.png",
+    "static/media/tomato.jpg": "/static/media/tomato.9565a1ba86386778fc67.jpg",
+    "static/media/color-palette.png": "/static/media/color-palette.c488cf3c9f4622bd5c89.png",
+    "static/media/paint-brush.png": "/static/media/paint-brush.5886524be9b90df25393.png",
+    "static/media/pencil.png": "/static/media/pencil.2f9832308b3f7db92daf.png",
+    "static/media/fresh.jpg": "/static/media/fresh.47b76f4192f51f0d5dc6.jpg",
+    "static/media/login_bg.jpg": "/static/media/login_bg.38a0188e029f99f02710.jpg",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.9dec73e1.css.map": "/static/css/main.9dec73e1.css.map",
+    "main.7b917eed.js.map": "/static/js/main.7b917eed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9dec73e1.css",
+    "static/js/main.7b917eed.js"
+  ]
+}

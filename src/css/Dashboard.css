@@ -1,0 +1,34 @@
+.canvas{
+background-size: cover;
+background-repeat: no-repeat;
+border: 0.5px solid gray;
+}
+.crop__drobdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+   
+}
+.crop__drobdown-img{
+height:30px;
+margin-left: 20px;
+width: 50px;
+border-radius: 5px;
+}
+.crop__drobdown-title{
+    flex: 0.7;
+    font-weight: bold;
+    font-size: 16px;
+}
+.dash_image__Carousel{
+    width: 500px;
+    height: 150px;
+    background-color: rgba(220, 220, 220, 0.53);
+    position: absolute;
+    right: 315px;
+    bottom:-350px;
+    border-radius: 10px;
+    border: 2px solid rgb(153, 152, 152);
+}

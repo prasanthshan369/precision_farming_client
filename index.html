@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"> </script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="initilize()">
+    <div class="container" style="margin-left:0%">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <h4 class="">Farm Segmentation</h4>
+                <div class="row"
+                    style="display:flex;justify-content:center;align-items:center;flex-direction:row;width:100%;margin-top:1%">
+                    <div id="edit_tools" style="display:block;">
+                        <div style="display:flex;justify-content:center;align-items:center">
+                            <div class="btn-group "
+                                style="margin-left:-70%;margin-top:30px;display:flex;padding-bottom: 10px;">
+                                <div style="display:flex;align-items:center;flex-direction:column;margin-left:10px">
+                                    <img src="./assets/image-editing.png" alt=""
+                                        style="width:30px;height:30px; margin:0px 10px;cursor: pointer;"
+                                        onclick="handlecanvasupdate()">
+                                    <span> Delete Image</span>
+                                </div>
+                                <div style="display:flex;align-items:center;flex-direction:column;margin-left:10px">
+                                    <img src="./assets/pencil.png" alt=""
+                                        style="width:30px;height:30px; margin:0px 10px;cursor: pointer;"
+                                        onclick="handlecanvas()">
+                                    <span>Draw</span>
+                                </div>
+                                <div style="display:flex;align-items:center;flex-direction:column;margin-left:10px">
+                                    <img src="./assets/paint-brush.png" alt=""
+                                        style="width:30px;height:30px;margin:0px 8px; cursor: pointer;" id="clear_poly"
+                                        value="Clear" onclick="testdata()">
+                                    <span>Erase</span>
+                                </div>
+
+                                <div class="color_ctn"
+                                    style="display:flex;align-items:center;flex-direction:column;margin-left:10px">
+                                    <input class="color_input" type="color" id="favcolor" value="#F67280" />
+                                    <img src="./assets/color-palette.png" alt="" style="width:30px;height:30px;">
+                                    <span>Color</span>
+
+                                </div>
+                            </div>
+                            <!-- <div id="handlesave" style="display:block;position: relative;left: 60%;">
+    <button type="button" style="width:275px;margin-left:5%;margin-top:30px" class="btn btn-secondary" id="saveorupdate" onclick="handlepartsave()">Save</button>
+    </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-1"
+                    style="display:flex;justify-content:center;align-items:center;flex-direction:row;width:100%">
+                    <div id="mydiv" style="display:flex;align-items: center;justify-content: center;">
+                        <div>
+                            <div style="margin-right:10px;margin-left:1px;display:none;" id="drawcanvas">
+                                <canvas id="canvas"
+                                    style="background: url('assets/no-image.png');background-repeat: no-repeat; background-size:cover; width:1000px;height:700px;border: 0.5px solid grey"></canvas>
+                            </div>
+                            <div style="margin-right:10px;margin-left:10rem;display:flex;" id="showcanvas">
+                                <canvas id="canvashow"style={{background: url('assets/background_2.jpg');background-repeat: no-repeat; background-size:cover; width:900px;height:700px;border:0.5px solid grey}}></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-2  scrollbar-none "
+                            style="height:700px;width:300px;overflow: auto; background-color: #dcefd1; border-radius: 7px;margin-left:10px;"
+                            id="showparts">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="./script.js"></script>
+</body>
+
+</html>
